@@ -42,7 +42,7 @@ namespace HRMS_API.Controllers.Security
                 // Login Logic
                 loginRequest.user = loginRequest.user.ToUpper();
                 string userName = string.Empty, passWord = string.Empty, RoleID = string.Empty, RoleTitle = string.Empty, UserID = string.Empty, emp_name = string.Empty, picture = string.Empty, status = string.Empty;
-                string Query = "SELECT USERID,USERNAME,EMP_NAME,EMP_PICTURE,USERPASSWORD,ROLEID,ROLETITLE,rcmnd_status,APV_STATUS,emp_id,COMP_NAME,emp_designation FROM SEC_USER where USERNAME=" + "'" + loginRequest.user + "'" + " and " + "USERPASSWORD='" + loginRequest.pass + "'";
+                string Query = "SELECT USERID,USERNAME,EMP_NAME,USERPASSWORD, APV_STATUS, rcmnd_status, emp_id, emp_designation, COMP_NAME, ROLEID, EMP_PICTURE, ROLETITLE FROM SEC_USER where USERNAME=" + "'" + loginRequest.user + "'" + " and " + "USERPASSWORD='" + loginRequest.pass + "'";
                 OracleCommand Oraclecmd = new OracleCommand(Query, Oracleconection);
 
                 OracleDataAdapter OracleDa = new OracleDataAdapter(Oraclecmd);
